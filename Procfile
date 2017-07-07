@@ -1,1 +1,1 @@
-web: gunicorn application.wsgi --log-file -
+web: gunicorn vanessaschill.wsgi --log-file -
