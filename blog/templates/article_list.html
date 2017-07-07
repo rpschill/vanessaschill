@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'website/css/website.css' %}">
+{% endblock stylesheets %}
+
+{% block title %}Blog | Vanessa Schill{% endblock title %}
+
+{% block header %}
+    {% include 'partials/header_inner.html' %}
+{% endblock header %}
+
+{% block pagecontent %}
+
+    <div class="w3-light-grey"style="padding-bottom: 40px; padding-top: 40px;">
+        <div class="w3-container" id="blog-header">
+            <h1 class="w3-jumbo" style="margin-bottom: 6px !important;">BLOG</h1>
+            <h3 class="w3-large w3-wide">vanessa schill</h3>
+        </div>
+        
+        {% for article in articles %}
+        <div class="w3-container w3-content w3-white w3-card w3-margin-top w3-margin-bottom">
+            
+            <h3 class="w3-xxlarge">{{ article.title }}</h1>
+            
+            <div class="w3-text-black">{{ article.body.content|striptags|truncatewords:200 }}</div>
+            
+            <a href="{% url 'article-detail' article.slug %}" class="w3-button w3-dark-grey w3-margin-top w3-margin-bottom">READ MORE</a>
+            
+        </div>
+        {% empty %}
+        <div class="w3-container w3-content w3-white w3-card">
+            <h2>Nothing to see here</h2>
+        </div>
+        {% endfor %}
+        
+        <div class="pagination w3-container w3-center">
+            <span class="step-links">
+                
+                {% if articles.has_previous %}
+                    <a href="?page={{ articles.previous_page_number }}" class="w3-button w3-grey w3-border w3-border-black"><i class="fa fa-angle-double-left"></i></a>
+                {% else %}
+                    <a class="w3-button w3-grey w3-border w3-border-black w3-disabled"><i class="fa fa-angle-double-left"></i></a>
+                {% endif %}
+                
+                <span class="current w3-large w3-padding">
+                    Page {{ articles.number }} of {{ articles.paginator.num_pages }}
+                </span>
+                
+                {% if articles.has_next %}
+                    <a href="?page={{ articles.next_page_number }}" class="w3-button w3-grey w3-border w3-border-black"><i class="fa fa-angle-double-right"></i></a>
+                {% else %}
+                    <a class="w3-button w3-grey w3-border w3-border-black w3-disabled"><i class="fa fa-angle-double-right"></i></a>
+                {% endif %}
+                
+            </span>
+        </div>
+        
+    </div>
+
+{% endblock pagecontent %}
+
+{% block footer %}
+    {% include 'partials/footer_inner.html' %}
+{% endblock footer %}

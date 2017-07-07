@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+    {% block title %}{{ object.title }} | Vanessa Schill{% endblock title %}
+    
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{% static 'website/css/website.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    {% endblock stylesheets %}
+    
+    {% block header %}
+        {% include 'partials/header_inner.html' %}
+    {% endblock header %}
+
+    {% block pagecontent %}
+            
+        <div style="padding-top: 42px;">
+            
+            <div class="blog-title-image w3-display-container" style="background-image: url({{ object.featured_image_splash.url }})">
+                <div class="w3-container w3-display-middle">
+                    <h1 class="w3-jumbo blog-title w3-text-white">{{ object.title }}</h1>
+                </div>
+            </div>
+            
+            <div class="w3-content w3-white" style="max-width: 640px;">
+
+                <div style="padding: 24px;">
+                    <span class="w3-text-black w3-xlarge">
+                        {{ object.body.content|safe }}
+                    </span>
+                </div>
+                    
+            </div>
+        </div>
+        
+    {% endblock pagecontent %}
+    
+    {% block footer %}
+        {% include 'partials/footer_inner.html' %}
+    {% endblock footer %}
