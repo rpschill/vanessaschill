@@ -1,0 +1,25 @@
+<div class="w3-top" id="navWrapper">
+    <div class="w3-bar w3-white w3-card-2 w3-animate-top" id="myNavbar">
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right menuToggle" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+        </a>
+        {% with request.resolver_match.url_name as url_name %}
+        <a href="{% url 'home' %}" class="w3-bar-item w3-hover-black w3-button"><b>VANESSA SCHILL</b></a>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button w3-hover-black w3-hide-small {% if url_name == 'instructional' or url_name == 'sales' %}active{% else %}w3-hover-black{% endif %}">PORTFOLIO</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="{% url 'instructional' %}" class="w3-bar-item w3-button">Instructional Design</a>
+                <a href="{% url 'sales' %}" class="w3-bar-item w3-button">Sales Enablement</a>
+            </div>
+        </div>
+        <a href="#" class="w3-bar-item w3-hover-black w3-button w3-hide-small {% if url_name == 'instructional' or url_name == 'sales' %}active{% else %}w3-hover-black{% endif %}"><i class="fa fa-folder-open"></i> PORTFOLIO</a>
+        <a href="{% url 'article-list' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-black {% if url_name == 'article-list' or url_name == 'article-detail' %}active{% else %}w3-hover-black{% endif %}"><i class="fa fa-pencil"></i> BLOG</a>
+        {% endwith %}
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="mobileNav" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="#" class="w3-bar-item w3-button menuToggle">PORTFOLIO</a>
+        <a href="{% url 'article-list' %}" class="w3-bar-item w3-button menuToggle">BLOG</a>
+    </div>
+</div>

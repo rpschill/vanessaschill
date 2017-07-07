@@ -1,0 +1,452 @@
+body {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+
+/* Create a Parallax Effect */
+
+
+/*.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg-6 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+
+h1, h2, h3, h4, h5 {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+#main-title-large, .main-title-small {
+    font-family: "Anton", sans-serif;
+}
+
+#main-title-large {
+    font-size: 154px;
+}
+
+.main-title-small {
+    font-size: 72px;
+}
+
+.portfolio-link, .section-title {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.portfolio-thumb {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .about-card {
+        border-radius: 148px 0 0 0;
+    }
+    .about-section {
+        margin-top: 6px;
+    }
+    .about-text {
+        font-size: 15px;
+        margin-top: 32px;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-card {
+        border-radius: 148px 0 0 148px;
+    }
+    .about-section {
+        margin-top: 55px;
+    }
+    .about-text {
+        font-size: 18px;
+        margin-top: 32px;
+    }
+}
+
+#mugshot {
+    margin-top: 24px;
+}
+
+.thumbnail {
+    border: 1px solid #000;
+}
+
+.contact-title-background {
+    background-color: #43C6AC;
+}
+
+.dark-grey {
+    background-color: #202020;
+}
+
+.dark-green-background {
+    background-color: #002929;
+    color: #fff;
+}
+
+.light-green {
+    background-color: #5AAB9D;
+}
+
+.pale-blue {
+    background-color: #6ED7D5;
+}
+
+.pale-yellow {
+    background-color: #F8FFAE;
+    color: #000;
+}
+
+
+/* First image (Logo. Full height) */
+
+.bgimg-1 {
+    background-image: url('../assets/bg_01.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Second image (Portfolio) */
+
+.bgimg-2 {
+    background: #FF5F6D;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC371, #FF5F6D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* Third image (Bio) */
+
+/*.bgimg-3 {
+    background: #002929;
+    /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to left, #002929, #669999);
+    /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to left, #002929, #669999);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*}*/
+
+.bgimg-3 {
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* Fourth image (Proficiencies) */
+
+.bgimg-4 {
+    background: #D3959B;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #BFE6BA, #D3959B);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #BFE6BA, #D3959B);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* Fifth image (Blog) */
+
+/*.bgimg-5 {
+    background: #FFA17F;*/
+    /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to left, #00223E, #FFA17F);*/
+    /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to left, #00223E, #FFA17F);*/
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*}*/
+
+.bgimg-5 {
+    background: #c0c0aa;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1cefff, #c0c0aa);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1cefff, #c0c0aa); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+/* Sixth image (Contact) */
+
+.bgimg-6 {
+    background: #43C6AC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F8FFAE, #43C6AC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F8FFAE, #43C6AC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sales-page-wrapper {
+    background-color: #669999;
+}
+
+.w3-wide {
+    letter-spacing: 10px;
+}
+
+.w3-less-wide {
+    letter-spacing: 5px;
+}
+
+.w3-hover-opacity {
+    cursor: pointer;
+}
+
+.btn-transparent {
+    background: transparent;
+}
+
+a.portfolio-link {
+    text-decoration: none;
+}
+
+.w3-text-signal-orange {
+    color: #d4652f;
+}
+
+.fp-controlArrow {
+    margin: 0 32px 0 32px;
+}
+
+@media (max-width: 768px) {
+    .fp-controlArrow {
+        display: none !important;
+    }
+
+}
+
+@media (max-width: 1375px) {
+    #blog-header {
+        position: inherit;
+    }
+}
+
+@media (min-width: 1376px) {
+    #blog-header {
+        position: fixed;
+    }
+    
+    #blog-wrapper {
+        padding-top: 96px;
+    }
+}
+
+a.active {
+    background-color: #bbb;
+    color: #000;
+}
+
+#fp-nav a.active {
+    background-color: transparent;
+}
+
+.featured {
+    height: 200px;
+    position: relative;
+    opacity: 1;
+    transition: all 0.8s ease-in-out;
+    background: #FFF;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.featured:before,
+.featured:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.8s ease-in-out;
+}
+
+.featured:before {
+    background: #000;
+    opacity: 0.6;
+    z-index: 50;
+}
+
+.featured:after {
+    background: #FFF;
+    opacity: 1;
+    z-index: 100;
+}
+
+
+
+.featured.show:before {
+    opacity: 0.45;
+}
+
+.featured.show:after {
+    opacity: 0;
+}
+
+.featured-title {
+    z-index: 200;
+}
+
+.title-link {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.featured-title {
+    transition: all 0.8s ease-in-out;
+    position: relative;
+}
+
+.title-date {
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.title-date:after {
+    content: "";
+    display: block;
+    background-color: transparent;
+    width: 0px;
+    height: 2px;
+    margin: 0px auto;
+    transition: width .8s ease-in-out
+}
+
+.title-date.show:after {
+    width: 100%;
+    background-color: #FFF;
+    margin: auto;
+}
+
+.fade-button {
+    transition: all ease-in-out 0.4s;
+}
+
+.blog-title-image {
+    max-width: 1200px;
+    height: 360px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.home-section .home-title,
+.blog-section .article-grid,
+.blog-section .fade-div,
+.portfolio-section .portfolio-grid,
+.bio-section .bio-card,
+.proficiency-section .slide-one .slide-one-content,
+.proficiency-section .slide-two .slide-two-content,
+.contact-section .contact-content {
+    transform: translateY(1000px);
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.16, 0.68, 0.43, 0.99), opacity 0.8s ease-in-out;
+}
+
+.home-section.active .home-title,
+.blog-section.active .article-grid,
+.blog-section.active .fade-div,
+.portfolio-section.active .portfolio-grid,
+.bio-section.active .bio-card,
+.proficiency-section.active .slide-one.active .slide-one-content,
+.proficiency-section.active .slide-two.active .slide-two-content,
+.contact-section.active .contact-content {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+.home-section .title-large {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.home-section.active .title-large {
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+
+.proficiency-section.active .slide-two.active .slide-two-content {
+    transition-delay: 0.33s;
+}
+
+.hvr-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+  
+/* Float Shadow */
+.hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+.document-parent {
+    position: relative;
+}
+
+.document-child {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+}

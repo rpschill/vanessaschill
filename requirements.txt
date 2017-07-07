@@ -1,0 +1,5 @@
+django_imagekit==4.0.1
+Django==1.11.2
+django_summernote==0.8.7
+imagekit==1.0.6
+django_model_utils==3.0.0

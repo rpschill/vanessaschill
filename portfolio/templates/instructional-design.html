@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Instructional Design | Vanessa Schill{% endblock title %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'website/css/website.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'partials/header_inner.html' %}
+{% endblock header %}
+
+{% block pagecontent %}
+
+<body class="bgimg-5">
+
+    <!-- Page Wrapper -->
+    <div style="margin-top: 68px; margin-bottom: 38px;">
+    
+        <!-- Grid -->
+        <div class="w3-container w3-margin w3-padding">
+    
+            <div class="w3-row-padding">
+    
+                {% for document in idocuments %}
+                <div class="w3-col l4 m6 s12">
+                    <div class="w3-card-4 w3-light-grey document-parent" style="min-height: 615px;">
+                        <h3 class="w3-center w3-grey" style="padding: 12px 0 6px 0;">{{ document.title }}</h3>
+                        <div class="w3-container">
+                            <div class="w3-container">
+                                <img src="{{ document.featured_image.url }}" class="thumbnail w3-image" alt="Voicethread Desire2Learn">
+                            </div>
+                            <p>
+                                {{ document.summary }}
+                            </p>
+                        </div>
+                        {% if document.ext_url %}
+                        <div class="w3-container w3-bar w3-center document-child">
+                            <a href="{% if document.ext_url %}{{ document.ext_url }}{% endif %}" class="w3-button w3-white w3-border w3-border-black w3-hover-black w3-hover-text-white w3-padding-large button-child fade-button" style="text-decoration: none;">LEARN MORE</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End grid -->
+    
+    </div>
+    <!-- End page wrapper -->
+</body>
+
+{% endblock pagecontent %}
+
+{% block footer %}
+    {% include 'partials/footer_inner.html' %}
+{% endblock %}

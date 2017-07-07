@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+    {% block stylesheets %}
+    <link href="{% static 'website/css/animate.css' %}">
+    <link href="{% static 'website/css/hover.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/website.css' %}">
+    {% endblock stylesheets %}
+    
+    {% block title %}Vanessa Schill | Writer Editor Educator{% endblock title %}
+    
+    {% block header %}
+        {% include 'partials/header_index.html' %}
+    {% endblock header %}
+
+    {% block pagecontent %}
+
+        <!-- Fullpage wrapper -->
+        <div id="fullpage">
+
+            <!-- Section 1 - Home -->
+            <div class="bgimg-1 section home-section fp-auto-height-responsive" data-anchor="home">
+                <div class="w3-display-middle" style="white-space: nowrap;">
+                    <span id="main-title-large" class="w3-center w3-padding-large w3-text-white w3-hide-small title-large">VANESSA SCHILL</span>
+                    <p class="main-title-small w3-center w3-text-white w3-hide-large w3-hide-medium w3-animate-opacity" style="margin: 5px 0 5px 0;">VANESSA</p>
+                    <p class="main-title-small w3-center w3-text-white w3-animate-opacity w3-hide-large w3-hide-medium" style="margin: 5px 0 5px 0;">SCHILL</p>
+                    <p class="w3-padding-large light-green w3-center w3-xlarge w3-wide w3-text-white w3-hide-small home-title">eLearning and Instructional Design</p>
+                    <p class="w3-padding-large w3-center w3-xlarge w3-animate-opacity w3-text-white w3-hide-large w3-hide-medium">Instructional Design</p>
+                </div>
+            </div>
+            <!-- End Section 1 - Home -->
+            
+            <!-- Section 5 - Blog -->
+            <div class="bgimg-5 section blog-section" data-anchor="blog">
+                <div class="w3-container w3-padding">
+                    <p class="w3-jumbo w3-wide w3-center section-title w3-text-black w3-hide-small" style="margin-bottom: 0;">BLOG</p>
+                    <p class="w3-xxxlarge section-title w3-text-black w3-center w3-hide-medium w3-hide-large" style="margin-bottom: 0;">BLOG</p>
+                    
+                    <div class="w3-row-padding article-grid">
+                        
+                        {% for article in object_list %}
+                            <article class="w3-container w3-col l6 m6 s12 w3-margin-bottom w3-padding">
+                                <header class="w3-display-container w3-card-4 featured" style="background-image: url({{ article.featured_image_thumbnail_home.url }})" data-article-id="article-{{ article.pk }}">
+                                    <div class="w3-display-middle featured-title w3-center">
+                                        <a href="{% url 'article-detail' article.slug %}" class="title-link">
+                                            <span class="w3-large title-date">{{ article.published_date|date:"l, F j, Y" }}</span>
+                                        </a>
+                                        <h1 id="article-{{ article.pk }}" class="w3-jumbo"><a href="{% url 'article-detail' article.slug %}" class="title-link">{{ article.title|title }}
+                                        </a></h1>
+                                    </div>
+                                </header>
+                            </article>
+                        {% endfor %}
+                        
+                    </div>
+                    
+                    <div class="w3-margin-bottom w3-padding w3-center fade-div">
+                        <a href="{% url 'article-list' %}" class="w3-button w3-center pale-blue w3-text-black w3-hover-black w3-hover-text-white w3-large w3-border w3-border-black fade-button">MORE</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- End Section 5 - Blog -->
+
+            <!-- Section 2 - Portfolio -->
+            <div class="bgimg-2 section w3-text-white portfolio-section" data-anchor="portfolio">
+
+                <div class="w3-container w3-padding">
+                    <p class="w3-jumbo section-title w3-text-white w3-wide w3-center w3-hide-small" style="margin-bottom: 0;">PORTFOLIO</p>
+                    <p class="w3-xxxlarge section-title w3-text-white w3-center w3-hide-medium w3-hide-large" style="margin-bottom: 0;">PORTFOLIO</p>
+                    
+                    <!-- Responsive Grid. Three columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+                    <div class="w3-row-padding w3-center portfolio-grid w3-padding">
+                        <div class="w3-col l4 m4 portfolio w3-margin-bottom hvr-float-shadow">
+                            
+                            <h4 class="w3-xxlarge">
+                                <a href="{% url 'instructional' %}" class="portfolio-link animate portfolio-animate">
+                                    Instructional Design
+                                </a>
+                            </h4>
+                            <a href="{% url 'instructional' %}" class="animate portfolio-animate">
+                                <img src="{% static 'website/assets/IMG_6788.PNG' %}" class="portfolio-thumb w3-image" alt="instructional design" />
+                            </a>
+                        </div>
+
+                        <div class="w3-col l4 m4 portfolio w3-margin-bottom hvr-float-shadow">
+                            <h4 class="w3-xxlarge">
+                                <a href="{% url 'sales' %}" class="portfolio-link animate portfolio-animate">
+                                    Sales
+                                </a>
+                            </h4>
+                            <a href="{% url 'sales' %}" class="portfolio-link animate portfolio-animate">
+                                <img src="{% static 'website/assets/beehive_of_sales.jpg' %}" class="portfolio-thumb w3-image" alt="sales">
+                            </a>
+                        </div>
+
+                        <div class="w3-col l4 m4 portfolio w3-margin-bottom hvr-float-shadow">
+                            <h4 class="w3-xxlarge">
+                                <a href="https://vanessaschill.contently.com" class="portfolio-link animate portfolio-animate">
+                                    Published Work
+                                </a>
+                            </h4>
+                            <a href="https://vanessaschill.contently.com" class="animate portfolio-animate">
+                                <img src="{% static 'website/assets/reflecting_pool_publications.jpg' %}" class="portfolio-thumb w3-image" alt="published work">
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Section 2 - Portfolio -->
+            
+            <!-- Section 3 - Bio -->
+            <div class="bgimg-3 section bio-section dark-green-background" data-anchor="bio">
+
+                <div class="w3-container w3-content w3-padding">
+                    <p class="w3-jumbo w3-wide w3-center w3-text-white section-title w3-hide-small" style="margin-bottom: 0;">BIO</p>
+                    <p class="w3-xxxlarge section-title w3-text-white w3-center w3-hide-medium w3-hide-large" style="margin-bottom: 0;">BIO</p>
+                    <div class="w3-row w3-card-4 about-card light-green bio-card">
+                        <div class="w3-col m4 about-section">
+                            <img id="mugshot" src="{% static 'website/assets/vanessa_schill_mugshot.jpg' %}" class="w3-circle w3-border w3-image w3-grayscale-max w3-hide-small" alt="Photo of Me" width="250">
+                            <img id="mugshot" src="{% static 'website/assets/vanessa_schill_mugshot.jpg' %}" class="w3-circle w3-border w3-image w3-grayscale-max w3-hide-medium w3-hide-large" alt="Photo of Me" width="200">
+                        </div>
+
+                        <div class=" w3-container w3-col m8 w3-padding w3-margin-top w3-text-white">
+                            <span class="about-text w3-margin-top">
+                                 I am a Kennesaw State University alum, with a B.A. in Communication and a M.A. in American Studies. I have more than 10
+                                years of experience working in media, sales, and marketing positions. A little over 3 years
+                                ago, I expanded my skillset to include instructional design and teaching. In addition to
+                                working as a part-time instructor, I am also a full-time technical writer for a software
+                                company. My strengths include writing focused, task-oriented and user-oriented documentation;
+                                developing and implementing in-class and eLearning curricula; and conducting research to
+                                ensure that both my writing and instructional materials are accurate, complete, and usable.
+                                During my free time, I enjoy reading, cooking, and spending time with my family. A little-known
+                                fact about me: I love retro video games, and have an original NES (Nintendo Entertainment
+                                System) circa 1983. My two favorite games are Super Mario Brothers and Tetris.
+
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Section 3 - Bio -->
+            
+            <!-- Section 4 - Proficiencies -->
+
+            <!-- Slides for desktop and tablet -->
+            <div class="bgimg-4 proficiencies w3-container section proficiency-section fp-auto-height-responsive" data-anchor="proficiencies">
+                
+                <!-- Slide 1 -->
+                <div class="slide slide-one" data-anchor="slide1">
+                    
+                    <p class="w3-jumbo w3-wide w3-center w3-text-white section-title w3-hide-small" style="margin-bottom: 0;">PROFICIENCIES</p>
+                    <p class="w3-xxlarge section-title w3-text-white w3-center w3-hide-medium w3-hide-large" style="margin-bottom: 0;">PROFICIENCIES</p>
+                    
+                    <div class="w3-container w3-content w3-row-padding slide-one-content">
+                        <div class="w3-col l6 m6 s12">
+                            <ul class="w3-card-4 w3-border w3-ul w3-white">
+                                <li><h2>Degrees</h2></li>
+                                <li class="w3-padding">
+                                    <span class="w3-large">M.A. in American Studies</span>
+                                    <span>Kennesaw State University, 2016</span>
+                                </li>
+                                <li class="w3-padding">
+                                    <span class="w3-large">B.S. in Communication</span>
+                                    <span>Kennesaw State University, 2012</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="w3-col l6 m6 s12">
+                            <ul class="w3-card-4 w3-border w3-ul w3-white">
+                                <li><h2>Certifications</h2></li>
+                                <li class="w3-padding">Quality Matters (instructor and instructional designer)</li>
+                                <li class="w3-padding">Large Enrollment Online Courses certification; Kennesaw State University Office of Distance Education
+                                </li>
+                                <li class="w3-padding">Certified Occupancy Speciality (Affordable Housing)</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    
+                </div> <!-- End slide 1 -->
+                
+                <!-- Slide 2 -->
+                <div class="slide slide-two" data-anchor="slide2">
+                    
+                    <p class="w3-jumbo w3-wide w3-center w3-text-white section-title w3-hide-small" style="margin-bottom: 0;">PROFICIENCIES</p>
+                    <p class="w3-xxlarge section-title w3-text-white w3-center w3-hide-medium w3-hide-large" style="margin-bottom: 0;">PROFICIENCIES</p>
+                
+                    <div class="w3-container w3-content w3-margin-bottom slide-two-content">
+                        <div class="w3-card-4 w3-white">
+                            <div class="w3-row">
+                                <div class="w3-col">
+                                    <h2 class="w3-padding">Technologies</h2>
+                                </div>
+                            </div>
+                            <div class="w3-row">
+                                <div class="w3-col l6 m6 s12">
+                                    <ul class="w3-ul w3-border w3-white">
+                                        <li class="w3-padding">Doceri</li>
+                                        <li class="w3-padding">Desire2Learn</li>
+                                        <li class="w3-padding">Voicethread</li>
+                                        <li class="w3-padding">Panopto</li>
+                                        <li class="w3-padding">Google Apps Suite</li>
+                                        <li class="w3-padding">MS Office 365</li><li class="w3-padding">WebWorks</li>
+                                    </ul>
+                                </div>
+                                <div class="w3-col l6 m6 s12">
+                                    <ul class="w3-ul w3-border w3-white">
+                                        <li class="w3-padding">Moodle</li>
+                                        <li class="w3-padding">Confluence</li>
+                                        <li class="w3-padding">Adobe Spark</li>
+                                        <li class="w3-padding">Adobe FrameMaker</li>
+                                        <li class="w3-padding">Adobe InDesign</li>
+                                        <li class="w3-padding">Adobe Photoshop</li>
+                                        <li class="w3-padding">Camtasia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div> <!-- End slide 2 -->
+
+            </div>
+            <!-- End Section 4 - Proficiencies -->
+            
+            <!-- Section 6 - Contact -->
+            <div class="bgimg-6 section contact-section" data-anchor="contact">
+
+                <div class="w3-container w3-content w3-padding">
+                    <p class="w3-jumbo w3-wide w3-center section-title w3-text-black w3-hide-small" style="margin-bottom: 0;">CONTACT ME</p>
+                    <p class="w3-xxxlarge section-title w3-text-black w3-center w3-hide-medium w3-hide-large" style="margin-bottom: 0;">CONTACT ME</p>
+
+                    
+                        <div class="w3-row-padding w3-margin-top contact-content">
+
+                            <div class="w3-col m1">
+                                <div class="w3-bar" style="max-width: 240px; margin-right:auto; margin-left:auto;">
+                                    <a href="https://twitter.com/v_schill" class="w3-bar-item w3-large w3-hover-opacity" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a>
+                                    <a href="https://www.linkedin.com/in/vanessaschill/" class="w3-bar-item w3-large w3-hover-opacity" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a>
+                                    <a href="http://pinterest.com/vanessa_schill" class="w3-bar-item w3-large w3-hover-opacity" target="_blank"><i class="fa fa-pinterest-square fa-3x"></i></a>
+                                </div>
+
+                            </div>
+
+                            <div class="w3-col m11">
+                                <form class="w3-panel w3-card-4" style="max-width: 500px; margin-right:auto; margin-left:auto;" action="mailto:rpschill@gmail.com" method="post" enctype="text/plain">
+                                    <h2>Send me an email</h2>
+                                    <p><input type="text" class="w3-input" placeholder="Name"></p>
+                                    <p><input type="email" class="w3-input" placeholder="Email"></p>
+                                    <p><input type="text" class="w3-input" placeholder="Subject"></p>
+                                    <p><textarea class="w3-input" placeholder="Message ..."></textarea></p>
+                                    <p>
+                                        <span class="w3-bar">
+                                            <input type="submit" value="SEND" class="w3-button w3-border w3-border-white w3-hover-border-black w3-hover-black">
+                                            <input type="reset" value="RESET" class="w3-button w3-border w3-border-white w3-hover-border-red w3-hover-red">
+                                        </span>        
+                                    </p>
+                                </form>
+                            </div>
+
+                        </div>
+
+                </div>
+
+            </div>
+            <!-- End Section 6 - Contact -->
+
+        </div> 
+        <!-- End Fullpage wrapper -->
+    
+    {% endblock pagecontent %}
