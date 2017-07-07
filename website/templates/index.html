@@ -40,7 +40,7 @@
                         
                         {% for article in object_list %}
                             <article class="w3-container w3-col l6 m6 s12 w3-margin-bottom w3-padding">
-                                <header class="w3-display-container w3-card-4 featured" style="background-image: url({{ article.featured_image_thumbnail_home.url }})" data-article-id="article-{{ article.pk }}">
+                                <header class="w3-display-container w3-card-4 featured" style="background-image: url(article.featured_image_thumbnail_home.url)" data-article-id="article-{{ article.pk }}">
                                     <div class="w3-display-middle featured-title w3-center">
                                         <a href="{% url 'article-detail' article.slug %}" class="title-link">
                                             <span class="w3-large title-date">{{ article.published_date|date:"l, F j, Y" }}</span>
