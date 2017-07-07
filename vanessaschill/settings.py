@@ -141,7 +141,7 @@ STATICFILES_DIRS = (
 # Whitenoise setup for serving static files in production
 # https://warehouse.python.org/project/whitenoise/
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Media files storage
 
