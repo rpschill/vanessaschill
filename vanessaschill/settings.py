@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fz-m0w@3crug1w4!)_%%2i-w71di8wj37zgck$1anga831(*=*'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'vanessaschill.wsgi.application'
 import dj_database_url
 
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASE['default'].update(db_from_env)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
