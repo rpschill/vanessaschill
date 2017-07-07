@@ -76,7 +76,7 @@ class Article(Authorable, Creatable, Coauthorable, Featurable):
     slug = models.SlugField()
     body = SplitField()
     labels = models.ManyToManyField('Label', blank=True,)
-    category = models.ForeignKey('Category', on_delete=models.CASCADE, default=1, blank=True, null=True)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True)
     
     def __str__(self):
         return self.title
