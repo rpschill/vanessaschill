@@ -22,7 +22,7 @@
         {% for article in articles %}
         <div class="w3-container w3-content w3-white w3-card w3-margin-top w3-margin-bottom">
             
-            <h3 class="w3-xxlarge">{{ article.title }}</h1>
+            <h3 class="w3-xxlarge">{{ article.title }}</h3>
             
             <div class="w3-text-black">{{ article.body.content|striptags|truncatewords:200 }}</div>
             
